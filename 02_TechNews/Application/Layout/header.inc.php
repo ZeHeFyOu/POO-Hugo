@@ -1,4 +1,25 @@
-<!DOCTYPE html>
+<?php
+    # Importation des Classes
+    use Application\Model\Categorie\CategorieDb;
+
+    # Récupération des Catégories du Site
+    $CategorieDb = new CategorieDb();
+    $Categories = $CategorieDb->fetchAll();
+
+    # Importation des Classes
+    use Application\Model\Tags\TagsDb;
+
+    # Récupération des Tags du Site
+    $TagsDb = new TagsDb();
+    $Tags = $TagsDb->fetchAll();
+
+    # Importation des Classes
+    use Application\Model\Article\ArticleDb;
+
+    # Récupération des Article du Site
+    $ArticleDb = new ArticleDb();
+    $Article = $ArticleDb->fetchAll();
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

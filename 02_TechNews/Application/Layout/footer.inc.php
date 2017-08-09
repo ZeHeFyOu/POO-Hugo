@@ -15,26 +15,20 @@
                     <div class="col-md-3 col-md-offset-1 col-sm-4 col-xs-12">
                         <h3>NOS CATEGORIES</h3>
                         <ul class="list-category">
-                            <li><a href="<?= PUBLIC_URL; ?>/index.html">Accueil</a></li>
-                            <li><a href="<?= PUBLIC_URL; ?>/business.html">Business</a></li>
-                            <li><a href="<?= PUBLIC_URL; ?>/computing.html">Computing</a></li>
-                            <li><a href="<?= PUBLIC_URL; ?>/tech.html">Tech</a></li>=
+		                    <?php foreach($Categories as $categorie) : ?>
+			                <li><a href="#">
+                                <?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
+			                <?php endforeach ; ?>
                         </ul>
                     </div>
                     <div class="col-md-3 col-md-offset-1 col-sm-4 col-xs-12">
                         <h3>RECHERCHE PAR TAGS</h3>
 
                         <div class="list-tags">
-                            <a href="#">iPhone 7</a>
-                            <a href="#">News</a>
-                            <a href="#">Sport</a>
-                            <a href="#">Apple</a>
-                            <a href="#">Alcatel</a>
-                            <a href="#">Pixi 4</a>
-                            <a href="#">Elon Musk </a>
-                            <a href="#">Smart phone</a>
-                            <a href="#">Nexus</a>
-                            <a href="#">Canvas</a>
+		                    <?php foreach($Tags as $tag) : ?>
+			                    <a href="<?= $tag->getROUTETAGS() ; ?>">
+                                <?= $tag->getLIBELLETAGS(); ?></a>
+			                <?php endforeach ; ?>
 
                         </div>
                     </div>
@@ -43,7 +37,7 @@
                 <div class="allright">
                     <div class="row">
                         <div class="col-sm-6 col-xs-12">
-                            <p> © 2017 <a href="#">TECH NEWS</a>. All rights reserved.</p>
+                            <p> © 2017 <a href="<?= PUBLIC_URL ; ?>">TECH NEWS</a>. All rights reserved.</p>
                         </div>
 
                         <div class="col-sm-6 col-xs-12">

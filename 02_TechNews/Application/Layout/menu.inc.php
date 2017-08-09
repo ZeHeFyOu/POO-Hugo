@@ -2,10 +2,10 @@
 <nav class="menu-res hidden-lg hidden-md ">
 	<div class="menu-res-inner">
 		<ul>
-			<li><a href="<?= PUBLIC_URL; ?>/index.html">HOME</a></li>
-			<li><a href="<?= PUBLIC_URL; ?>/business.html">BUSINESS</a></li>
-			<li><a href="<?= PUBLIC_URL; ?>/computing.html"> COMPUTING</a></li>
-			<li><a href="<?= PUBLIC_URL; ?>/tech.html">TECH</a></li>
+		    <?php foreach($Categories as $categorie) : ?>
+			<li><a href="<?= PUBLIC_URL .'/'. $categorie->getROUTECATEGORIE(); ?>">
+                <?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
+			<?php endforeach ; ?>
 		</ul>
 	</div>
 </nav>
@@ -28,18 +28,10 @@
 				<span>MENU</span>
 			</div>
 			<ul class="hidden-sm hidden-xs">
-				<li>
-					<a href="<?= PUBLIC_URL; ?>/index.html">Accueil </a>
-				</li>
-				<li>
-					<a href="<?= PUBLIC_URL; ?>/business.html">Business</a>
-				</li>
-				<li>
-					<a href="<?= PUBLIC_URL; ?>/computing.html">Computing</a>
-				</li>
-				<li>
-					<a href="<?= PUBLIC_URL; ?>/tech.html">Tech </a>
-				</li>
+		    <?php foreach($Categories as $categorie) : ?>
+			<li><a href="<?= PUBLIC_URL .'/'. $categorie->getROUTECATEGORIE(); ?>">
+                <?= $categorie->getLIBELLECATEGORIE(); ?></a></li>
+			<?php endforeach ; ?>
 			</ul>
 			<div class="search-icon">
 				<div class="search-icon-inner">

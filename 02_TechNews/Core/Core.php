@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class Core {
+class Core extends \Core\Controller\AppController {
 
     public function __construct($params) {
 
@@ -24,12 +24,14 @@ class Core {
                 // -- Execution de l'action
                 $obj->$action();
             } else {
-                echo "<h1>Erreur 404 - Page Introuvable</h1><h3>Aucune vue correspondante.</h3>";
+                #echo "<h1>Erreur 404 - Page Introuvable</h1><h3>Aucune vue correspondante.</h3>"
+                $this->render('errors/404',['erreur'=>'Aucune vue correspondante']);
             }
 
         } else {
             // -- Sinon ,le fichier du controleur n'existe pas, donc je renvoie une erreur 404.
-            echo "<h1>Erreur 404 - Page Introuvable</h1><h3>Ce controleur n'existe pas.</h3>";
+            #echo "<h1>Erreur 404 - Page Introuvable</h1><h3>Ce controleur n'existe pas.</h3>";
+            $this->render('errors/404',['erreur'=>'Aucun controleur correspondant']);
         }
 
         #if($controller == "news" && $action == "article") {

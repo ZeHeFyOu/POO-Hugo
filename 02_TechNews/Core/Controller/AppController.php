@@ -29,4 +29,13 @@ class AppController {
     public function getParams() {
         return $this->_viewparams;
     }
+    
+    /**
+     * Fonction permettant le debuggage des paramètres de la vue.
+     */
+    public function debug() {
+        echo '<pre>';
+            print_r($this->_viewparams);
+        echo '</pre>';
+    }
 }
